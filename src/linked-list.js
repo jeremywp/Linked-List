@@ -14,6 +14,20 @@ class LinkedList {
             let done = false;
             let currentNode = this.head;
             while (!done) {
+                let previousNode;
+                if(newNode.data.name > currentNode.data.name) {
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                else if (newNode.data.name < currentNode.data.name) {
+                    previousNode.next = newNode;
+                    newNode.next = currentNode;
+                    this.size++;
+                    done = true;
+                }
+                else {
+                    return;
+                }
                 if (currentNode.next == null) {
                     currentNode.next = newNode;
                     this.size++;
@@ -133,7 +147,7 @@ function insert (newElement, item){
 
 function find(item){
     let currentNode = this.head;
-    while (currentNode.element != item) {
+    while (currentNode.element !== item) {
         currentNode = currentNode.next;
     }
     return currentNode;
