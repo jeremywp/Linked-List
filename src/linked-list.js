@@ -11,30 +11,26 @@ class LinkedList {
             this.size++;
         }
         else {
-            let done = false;
-            let currentNode = this.head;
-            while (!done) {
+            if (newNode.data.next < this.head.data.name){
+                newNode.next = this.head;
+                this.head = newNode;
+            }
+            else {
                 let previousNode;
-                if(newNode.data.name > currentNode.data.name) {
-                    previousNode = currentNode;
-                    currentNode = currentNode.next;
-                }
-                else if (newNode.data.name < currentNode.data.name) {
-                    previousNode.next = newNode;
-                    newNode.next = currentNode;
-                    this.size++;
-                    done = true;
-                }
-                else {
-                    return;
-                }
-                if (currentNode.next == null) {
-                    currentNode.next = newNode;
-                    this.size++;
-                    done = true;
-                }
-                else {
-                    currentNode = currentNode.next;
+                let currentNode = this.head;
+                while (currentNode != null) {
+                    if (newNode.data.name > currentNode.data.name) {
+                        previousNode = currentNode;
+                        currentNode = currentNode.next;
+                    }
+                    else if (newNode.data.name < currentNode.data.name) {
+                        previousNode.next = newNode;
+                        newNode.next = currentNode;
+                        this.size++;
+                    }
+                    else {
+                        return;
+                    }
                 }
             }
         }
