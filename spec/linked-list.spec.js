@@ -94,17 +94,3 @@ describe('LinkedList', () => {
         });
     });
 });
-
-describe('toString', () => {
-    it('should return a string of the tree correctly', () => {
-        let link = {name: 'Link', number: '801-456-7890'};
-        let zelda = {name: 'Zelda', number: '801-456-6787'};
-        let ganon = {name: 'Ganon', number: '801-456-2342'};
-        binarySearchTree.insert(link);
-        binarySearchTree.insert(zelda);
-        binarySearchTree.insert(ganon);
-        expect(binarySearchTree.toString()).toEqual('[Link] -> [Zelda] -> [Ganon] -> null');
-        binarySearchTree.remove('Ganon');
-        expect(binarySearchTree.toString()).toEqual('[Link] -> [Zelda] -> null')
-    });
-});
