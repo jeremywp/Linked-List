@@ -27,7 +27,7 @@ describe('LinkedList', () => {
         });
     });
 
-    describe('cntains', () => {
+    describe('contains', () => {
         it('should find an element at the front of the list correctly', () => {
             let mario = {name: 'Mario', number: '801-456-7890'};
             let luigi = {name: 'Luigi', number: '801-456-6787'};
@@ -92,9 +92,9 @@ describe('LinkedList', () => {
             linkedList.insert(mario);
             linkedList.insert(luigi);
             linkedList.insert(bowser);
-            expect(linkedList.toString()).toEqual('[Mario] -> [Luigi] -> [Bowser] -> null');
+            expect(linkedList.toString()).toEqual('[Bowser] -> [Luigi] -> [Mario] -> null');
             linkedList.remove('Luigi');
-            expect(linkedList.toString()).toEqual('[Mario] -> [Bowser] -> null')
+            expect(linkedList.toString()).toEqual('[Bowser] -> [Mario] -> null')
         });
     });
 });

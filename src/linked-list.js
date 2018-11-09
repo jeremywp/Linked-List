@@ -16,8 +16,8 @@ class LinkedList {
                 this.head = newNode;
             }
             else {
-                let previousNode;
-                let currentNode = this.head;
+                let previousNode = this.head;
+                let currentNode = this.head.next;
                 while (currentNode != null) {
                     if (newNode.data.name > currentNode.data.name) {
                         previousNode = currentNode;
@@ -32,6 +32,8 @@ class LinkedList {
                         return;
                     }
                 }
+                previousNode.next = newNode;
+                this.size++;
             }
         }
     }
@@ -111,6 +113,7 @@ module.exports = LinkedList;
 
 let myLinkedList = new LinkedList;
 
+/*
 
 //Trent's linked list
 
@@ -162,4 +165,4 @@ function findPrevious(item){
         currentNode = currentNode.next;
     }
     return currentNode;
-}
+}*/
