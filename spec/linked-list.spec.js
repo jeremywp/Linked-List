@@ -9,20 +9,24 @@ describe('LinkedList', () => {
     });
 
     describe('insert', () => {
-        it('should insert data correctly', () => {
-            let mario = {name: 'Mario', number: '801-4566-7890'};
-            linkedList.insert(mario);
-            expect(linkedList.contains('Mario')).toEqual(mario);
-        });
-        it('should insert two data elements correctly', () => {
+        it('should return a string of the list in order', () => {
             let mario = {name: 'Mario', number: '801-456-7890'};
             let luigi = {name: 'Luigi', number: '801-456-6787'};
+            let bowser = {name: 'Bowser', number: '801-456-2342'};
+            let toad = {name: 'Toad', number: '801-456-7890'};
+            let peach = {name: 'Peach', number: '801-456-6787'};
+            let daisy = {name: 'Daisy', number: '801-456-2342'};
             linkedList.insert(mario);
             linkedList.insert(luigi);
-            expect(linkedList.contains('Mario')).toEqual(mario);
-            expect(linkedList.contains('Luigi')).toEqual(luigi);
-        })
+            linkedList.insert(bowser);
+            linkedList.insert(toad);
+            linkedList.insert(peach);
+            linkedList.insert(daisy);
+            expect(linkedList.toString()).toEqual('[Bowser] -> [Daisy] -> [Luigi] -> [Mario] -> [Peach] -> [Toad] ->' +
+                ' null');
+        });
     });
+
     describe('cntains', () => {
         it('should find an element at the front of the list correctly', () => {
             let mario = {name: 'Mario', number: '801-456-7890'};
