@@ -121,6 +121,7 @@ function Llist() {
 function insert (newElement, item){
     let newNode = new Node(newElement);
     let current = this.find(item);
+    let currentNode = this.head;
     while (currentNode.element < newNode.element) {
         currentNode = currentNode.next;
     }
